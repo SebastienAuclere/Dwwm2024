@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34018.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointApp1", "PointApp1.csproj", "{32194587-08DC-4B07-BD77-A415C136C187}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibPoint", "..\Point\LibPoint.csproj", "{37F08E17-A53D-494D-8E1E-E503240B6DD4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{32194587-08DC-4B07-BD77-A415C136C187}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32194587-08DC-4B07-BD77-A415C136C187}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32194587-08DC-4B07-BD77-A415C136C187}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32194587-08DC-4B07-BD77-A415C136C187}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37F08E17-A53D-494D-8E1E-E503240B6DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37F08E17-A53D-494D-8E1E-E503240B6DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37F08E17-A53D-494D-8E1E-E503240B6DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37F08E17-A53D-494D-8E1E-E503240B6DD4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B5DDF3D-BA8A-493F-A8DC-AD947E9AF0F0}
+	EndGlobalSection
+EndGlobal

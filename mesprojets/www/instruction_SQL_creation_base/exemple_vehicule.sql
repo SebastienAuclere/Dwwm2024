@@ -1,0 +1,36 @@
+CREATE DATABASE voiture
+USE voiture;
+
+-- CREATE TABLE PERSONNE( 
+-- id_pers INT AUTO_INCREMENT,
+-- CONSTRAINT PK_PERSONNE PRIMARY KEY(id_pers),
+-- nom VARCHAR(255),
+-- prenom VARCHAR(100),
+-- cp INT NOT NULL,
+-- CONSTRAINT ck_cp CHECK(cp between 0 AND 96000),
+-- ville VARCHAR(50) 
+--   )
+-- CREATE TABLE VEHICULE(
+-- id_immat char(12) NOT NULL PRIMARY KEY,
+-- marq VARCHAR(50) NOT NULL,
+-- km MEDIUMINT NOT NULL,
+-- mise_en_service DATE NOT NULL,
+-- id_pers INT NOT NULL,
+-- CONSTRAINT FK_PERSONNE FOREIGN KEY(id_pers) REFERENCES PERSONNE(id_pers) 
+--   )  
+-- USE cours;
+-- CREATE TABLE ETUDIANT(
+-- id_etudiant INT unsigned AUTO_INCREMENT,
+-- CONSTRAINT PK_ETUDIANT PRIMARY KEY(id_etudiant),
+-- nom VARCHAR(255) NOT NULL,
+-- prenom VARCHAR(100) NOT NULL,
+-- date_entree DATE NOT NULL
+--   );
+-- CREATE TABLE MATIERE(
+-- id_matiere INT unsigned AUTO_INCREMENT,
+-- CONSTRAINT PK_MATIERE PRIMARY KEY(id_matiere),
+-- lib_matière VARCHAR(100) NOT NULL,
+-- coef TINYINT NOT NULL,
+-- id_etudiant INT unsigned NOT NULL,
+-- CONSTRAINT FK_ETUDIANT FOREIGN KEY(id_etudiant) REFERENCES ETUDIANT(id_etudiant)
+--   )

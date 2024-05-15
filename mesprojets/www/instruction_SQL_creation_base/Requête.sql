@@ -1,0 +1,188 @@
+-- CREATE DATABASE voiture
+-- USE voiture;
+-- CREATE TABLE PERSONNE( 
+-- id_pers INT AUTO_INCREMENT,
+-- CONSTRAINT PK_PERSONNE PRIMARY KEY(id_pers),
+-- nom VARCHAR(255),
+-- prenom VARCHAR(100),
+-- cp INT UNSIGNED NOT NULL,
+-- CONSTRAINT ck_cp CHECK(cp<96000),
+-- ville VARCHAR(50) 
+--   )
+-- CREATE TABLE VEHICULE(
+-- id_immat char(12) NOT NULL PRIMARY KEY,
+-- marq VARCHAR(50) NOT NULL,
+-- km MEDIUMINT NOT NULL,
+-- mise_en_service DATE NOT NULL,
+-- id_pers INT NOT NULL,
+-- CONSTRAINT FK_PERSONNE FOREIGN KEY(id_pers) REFERENCES PERSONNE(id_pers) 
+--   )
+-- CREATE DATABASE CONTROLE
+-- USE CONTROLE;
+-- CREATE TABLE etudiant(
+-- id_etudiant_etu INT AUTO_INCREMENT,
+-- CONSTRAINT pk_etudiant PRIMARY KEY(id_etudiant_etu),
+-- nom_etu VARCHAR(255) NOT NULL,
+-- prenom_etu VARCHAR(100) NOT NULL,
+-- date_entree_etu DATE NOT NULL
+--   )
+-- CREATE TABLE matiere(
+-- id_matiere_mat INT AUTO_INCREMENT,
+-- CONSTRAINT pk_matiere PRIMARY KEY(id_matiere_mat),
+-- lib_matiere_mat VARCHAR(50) NOT NULL,
+-- coef_mat INT NOT NULL,
+-- id_etudiant_etu INT NOT NULL,
+-- CONSTRAINT fk_etudiant FOREIGN KEY(id_etudiant_etu) REFERENCES etudiant(id_etudiant_etu)   
+--   ) commande_livre
+-- CREATE TABLE exemplaire(
+-- num_Exempl INT AUTO_INCREMENT,
+-- ISBN CHAR(16) NOT NULL,
+-- Etat ENUM('D','E','P') DEFAULT 'D',
+-- CONSTRAINT fk_livre FOREIGN KEY(ISBN) REFERENCES livre(ISBN),
+-- CONSTRAINT pk_commande PRIMARY KEY(num_Exempl,ISBN) 
+--   );
+/* Erreur SQL (1050) : Table 'exemplaire' already exists */
+-- USE ventes;
+-- CREATE TABLE rayon(
+-- NomR VARCHAR(25),
+-- CONSTRAINT pk_rayon PRIMARY KEY(NomR)
+--   );
+-- CREATE TABLE magasin(
+-- CodeM INT AUTO_INCREMENT,
+-- CONSTRAINT pk_magasin PRIMARY KEY(CodeM),
+-- NomM VARCHAR(30)
+--   );
+-- CREATE TABLE article(
+-- CodeA INT AUTO_INCREMENT,
+-- CONSTRAINT pk_article PRIMARY KEY(CodeA),
+-- NomA VARCHAR(255) NOT NULL,
+-- TypeA ENUM('P','L','D') DEFAULT ('P')
+--   );
+-- CREATE TABLE stock(
+-- CodeM INT NOT NULL,
+-- CodeA INT NOT NULL,
+-- NomR VARCHAR(25) NOT NULL,
+-- Quantites INT NOT NULL, 
+-- CONSTRAINT fk_magasin FOREIGN KEY(CodeM) REFERENCES magasin(CodeM),    
+-- CONSTRAINT fk_article FOREIGN KEY(CodeA) REFERENCES article(CodeA),  
+-- CONSTRAINT fk_rayon FOREIGN KEY(NomR) REFERENCES rayon(NomR),
+-- CONSTRAINT pk_stock PRIMARY KEY(CodeM,CodeA,NomR)
+--   );
+-- USE entreprise;
+-- CREATE TABLE rayons(
+-- nom_rayon VARCHAR(25),
+-- CONSTRAINT pk_rayons PRIMARY KEY(nom_rayon),
+-- etage SMALLINT NOT NULL
+--   );
+-- CREATE TABLE fournisseur(
+-- code_f INT AUTO_INCREMENT,
+-- CONSTRAINT pk_fournisseur PRIMARY KEY(code_f),
+-- adresse VARCHAR(255) NOT NULL,
+-- nom_f VARCHAR(30) NOT NULL
+--   );
+-- CREATE TABLE article(
+-- code_a INT AUTO_INCREMENT,
+-- CONSTRAINT pk_article PRIMARY KEY(code_a),
+-- nom_a VARCHAR(25) NOT NULL,   
+-- type_a VARCHAR(30) NOT NULL
+--  );
+-- CREATE INDEX index_art ON article(type_a);  
+--  
+-- CREATE TABLE employes(
+-- code_emp SMALLINT,
+-- CONSTRAINT pk_employes PRIMARY KEY(code_emp),
+-- nom_emp VARCHAR(25) NOT NULL,
+-- salaire_emp DOUBLE NOT NULL
+--   );
+-- CREATE INDEX index_emp ON employes(nom_emp);
+-- 
+-- CREATE TABLE fourni_article(
+-- quantite MEDIUMINT NOT NULL
+--   );
+-- ALTER TABLE employes
+-- ADD COLUMN nom_rayon VARCHAR(25) NOT NULL, 
+-- ADD COLUMN code_emp_chef SMALLINT NOT NULL,
+-- ADD CONSTRAINT fk_employe_rayons FOREIGN KEY(nom_rayon)
+-- REFERENCES rayons(nom_rayon),
+-- ADD CONSTRAINT fk_employe_chef FOREIGN KEY(code_emp_chef)
+-- REFERENCES employes(code_emp)
+-- ;
+-- ALTER TABLE article
+-- ADD COLUMN nom_rayon VARCHAR(25)NOT NULL,
+-- ADD CONSTRAINT fk_rayon_article FOREIGN KEY(nom_rayon)   
+-- REFERENCES rayons(nom_rayon)
+-- ;
+-- ALTER TABLE fourni_article
+-- ADD COLUMN code_f INT NOT NULL,
+-- ADD COLUMN code_a INT NOT NULL,
+-- ADD CONSTRAINT fk_code_f FOREIGN KEY(code_f)
+-- REFERENCES fournisseur(code_f),
+-- ADD CONSTRAINT fk_code_a FOREIGN KEY(code_a)
+-- REFERENCES article(code_a),
+-- ADD CONSTRAINT pk_article_fournisseur PRIMARY KEY(code_f,code_a)
+-- ;article 
+-- USE alcool;
+-- CREATE TABLE vigneron(
+-- num_vig INT AUTO_INCREMENT,
+-- CONSTRAINT pk_vigneron PRIMARY KEY(num_vig),
+-- nom_vig VARCHAR(30) NOT NULL,
+-- prenom_vig VARCHAR(30) NOT NULL,
+-- ville_vig VARCHAR(50)
+--   );
+-- CREATE TABLE buveur(
+-- num_buv INT AUTO_INCREMENT,
+-- CONSTRAINT pk_buveur PRIMARY KEY(num_buv),
+-- nom_buv VARCHAR(30) NOT NULL,
+-- prenom_buv VARCHAR(30) NOT NULL,
+-- ville_buv VARCHAR(50) NOT NULL
+--   );
+-- CREATE TABLE vin(
+-- num_vin INT AUTO_INCREMENT,
+-- CONSTRAINT pk_vin PRIMARY KEY(num_vin),
+-- cru VARCHAR (50) NOT NULL,
+-- millesime DATE NOT NULL,
+-- num_vig INT NOT NULL,
+-- CONSTRAINT fk_num_vig FOREIGN KEY(num_vig)
+-- REFERENCES vigneron(num_vig)
+--   );
+-- CREATE TABLE commande(
+-- num_com INT AUTO_INCREMENT,
+-- CONSTRAINT pk_commande PRIMARY KEY(num_com),
+-- date_com DATE NOT NULL,
+-- num_buv INT NOT NULL,
+-- CONSTRAINT fk_num_buv FOREIGN KEY(num_buv)
+-- REFERENCES buveur(num_buv)
+--   );
+-- CREATE TABLE entente(
+-- num_vig_ressentir INT NOT NULL,
+-- CONSTRAINT fk_num_vig_a FOREIGN KEY(num_vig_ressentir)
+-- REFERENCES vigneron(num_vig),
+-- num_vig_etre_ressenti INT NOT NULL,
+-- CONSTRAINT fk_num_vig_b FOREIGN KEY(num_vig_etre_ressenti)
+-- REFERENCES vigneron(num_vig),
+-- CONSTRAINT pk_num_vig_ressentir_num_vig_etre_ressenti PRIMARY KEY(num_vig_ressentir,num_vig_etre_ressenti), 
+-- critere TINYINT NOT NULL
+--   );
+-- alcoolCREATE TABLE vin_commande(
+-- num_vin INT NOT NULL,
+-- CONSTRAINT fk_num_vin FOREIGN KEY(num_vin)
+-- REFERENCES vin(num_vin),
+-- num_com INT NOT NULL,
+-- CONSTRAINT fk_num_com FOREIGN KEY(num_com)
+-- REFERENCES commande(num_com),
+-- CONSTRAINT pk_num_com_vin PRIMARY KEY(num_vin,num_com), 
+-- quantite INT NOT NULL
+--   );
+-- USE alcool;
+-- ALTER TABLE vigneron
+-- ADD CONSTRAINT nom_prenom UNIQUE (nom_vig,prenom_vig); alcoolbuveur
+ USE alcool;
+ CREATE INDEX index_buv ON buveur(nom_buv,prenom_buv);
+ 
+ 
+  
+     
+ 
+     
+         
+     
