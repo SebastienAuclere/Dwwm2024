@@ -1,4 +1,6 @@
-﻿namespace ClassLibraryFraction
+﻿using System.Drawing;
+
+namespace ClassLibraryFraction
 {
     public class Fraction
     {        
@@ -9,8 +11,8 @@
 
         // getters setters
 
-        public int numerateurX { get => numerateur; set => numerateur = value; }
-        public int denominateurY { get => denominateur; set => denominateur = value; }
+        public int Numerateur { get => numerateur; private set => numerateur = value; }
+        public int Denominateur { get => denominateur; private set => denominateur = value; }
 
         // constructeurs
         public Fraction()
@@ -35,7 +37,71 @@
         // afficher
         public override string ToString()
         {
-            return "la numérateur est : " + numerateur + " et le dénominateur est : " + denominateur +"ils sont séparés par une division.";
-        }      
+            return "le numérateur est : " + numerateur + " et le dénominateur est : " + denominateur + "ils sont séparés par une division.";
+        }
+        
+        // representation textuelle
+
+        public string RepresentationTextuelle()
+        {
+            if (denominateur == 1)
+            {
+                return "<<" + numerateur + ">>";
+            }
+            else  
+            {
+                return "<<" + numerateur + "/" + denominateur + ">> ";
+            }            
+        }
+
+        // oppose 
+
+        public Fraction Oppose()
+        {
+            return new Fraction(-(this.numerateur), this.denominateur);
+        }
+
+        // inverse
+
+        public Fraction Inverse()
+        {
+            return new Fraction(this.denominateur, this.numerateur);
+        }
+
+        // superieurA
+
+        public bool SuperieurA()
+        {
+            Fraction f = new Fraction();
+            Fraction f1 = new Fraction();
+            if (f.denominateur/f.numerateur > f1.denominateur/f1.numerateur)
+            { 
+                return true;
+            }
+            else
+            { 
+                return false; 
+            }
+        }
+
+        // egalA
+
+        public bool EgalA()
+        {
+            Fraction f = new Fraction();
+            Fraction f1 = new Fraction();
+            if ((f.denominateur / f.numerateur) == (f1.denominateur / f1.numerateur))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        // reduire
+
+        private
     }
 }
