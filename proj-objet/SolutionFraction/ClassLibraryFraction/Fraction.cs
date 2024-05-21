@@ -54,12 +54,19 @@ namespace ClassLibraryFraction
             }            
         }
 
-        // oppose 
-
+        // oppose 1        
         public Fraction Oppose()
         {
             return new Fraction(-(this.numerateur), this.denominateur);
         }
+        
+        // oppose 2
+        /*
+        public void Oppose()
+        {
+            this.numerateur = -this.numerateur;            
+        }
+        */
 
         // inverse
 
@@ -70,11 +77,9 @@ namespace ClassLibraryFraction
 
         // superieurA
 
-        public bool SuperieurA()
+        public bool SuperieurA(Fraction f1)
         {
-            Fraction f = new Fraction();
-            Fraction f1 = new Fraction();
-            if (f.denominateur/f.numerateur > f1.denominateur/f1.numerateur)
+            if ((double)this.numerateur / this.denominateur > (double)f1.numerateur / f1.denominateur)
             { 
                 return true;
             }
@@ -86,11 +91,9 @@ namespace ClassLibraryFraction
 
         // egalA
 
-        public bool EgalA()
-        {
-            Fraction f = new Fraction();
-            Fraction f1 = new Fraction();
-            if ((f.denominateur / f.numerateur) == (f1.denominateur / f1.numerateur))
+        public bool EgalA(Fraction f1)
+        {         
+            if ((double)this.numerateur / this.denominateur == (double)f1.numerateur / f1.denominateur)
             {
                 return true;
             }
@@ -102,6 +105,8 @@ namespace ClassLibraryFraction
 
         // reduire
 
-        private
+
+
+         
     }
 }
