@@ -37,7 +37,7 @@ namespace ClassLibraryFraction
         // afficher
         public override string ToString()
         {
-            return "le numérateur est : " + numerateur + " et le dénominateur est : " + denominateur + "ils sont séparés par une division.";
+            return "le numérateur est : " + numerateur + " et le dénominateur est : " + denominateur + " ils sont séparés par une division.";
         }
         
         // representation textuelle
@@ -55,31 +55,49 @@ namespace ClassLibraryFraction
         }
 
         // oppose 1        
-        public Fraction Oppose()
+        /*
+        public Fraction Oppose() //pour une fonction
         {
             return new Fraction(-(this.numerateur), this.denominateur);
         }
-        
+        */
         // oppose 2
-        /*
-        public void Oppose()
+        
+        public void Oppose() //pour une procedure
         {
             this.numerateur = -this.numerateur;            
         }
-        */
 
-        // inverse
-
+        // inverse 1
+        /*
         public Fraction Inverse()
         {
             return new Fraction(this.denominateur, this.numerateur);
         }
+        */
+        //inverse 2
+
+        public void Inverse() //pour une procedure
+        {
+            int c;                                     
+            c = this.numerateur;
+            this.numerateur = this.denominateur;
+            this.denominateur = c;
+        }
+
+        //inverse 3
+        /*
+        public void Inverse() // sucre syntaxique
+        {
+            (this.numerateur, this.denominateur) = (this.denominateur, this.numerateur);
+        }
+        */
 
         // superieurA
-
-        public bool SuperieurA(Fraction f1)
+        /*
+        public bool SuperieurA(Fraction f)
         {
-            if ((double)this.numerateur / this.denominateur > (double)f1.numerateur / f1.denominateur)
+            if ((double)this.numerateur / this.denominateur > (double)f.numerateur / f.denominateur)
             { 
                 return true;
             }
@@ -88,9 +106,19 @@ namespace ClassLibraryFraction
                 return false; 
             }
         }
+        */
+
+        // superieurA2 // permet moins d'opérations pour le compileur : moins lourd...
+       
+        public bool SuperieurA(Fraction f1)
+        {
+            return (double)this.numerateur / this.denominateur > (double)f1.numerateur / f1.denominateur;
+        }
+        
+
 
         // egalA
-
+        /*
         public bool EgalA(Fraction f1)
         {         
             if ((double)this.numerateur / this.denominateur == (double)f1.numerateur / f1.denominateur)
@@ -102,11 +130,18 @@ namespace ClassLibraryFraction
                 return false;
             }
         }
+        */
+        // superieurA2 // permet moins d'opérations pour le compileur : moins lourd...
+
+        public bool EgalA(Fraction f1)
+        {
+            return (double)this.numerateur / this.denominateur == (double)f1.numerateur / f1.denominateur;
+        }
 
         // reduire
 
 
 
-         
+
     }
 }
