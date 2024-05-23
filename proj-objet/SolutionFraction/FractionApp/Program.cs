@@ -7,14 +7,15 @@ namespace FractionApp
     {
         static void Main(string[] args)
         {
-            
-            Fraction b = new Fraction(8,12);         
-            b.Oppose();
-            Console.WriteLine(b);
-            b.Inverse();
-            Console.WriteLine(b);
+            /*
+            Fraction c = new Fraction(8,12);         
+            c.Oppose();
+            Console.WriteLine(c);
+            c.Inverse();
+            Console.WriteLine(c);
             Fraction d = new Fraction(9, 12);
-            Console.WriteLine(b.SuperieurA(d));
+            Console.WriteLine(c.SuperieurA(d));
+            /*
             /*
             Point a = new Point();
             Point a1 = new Point(3, 2);
@@ -31,6 +32,9 @@ namespace FractionApp
             Point cloneA3 = a3.SymetrieAxeAbscisse();
             Console.WriteLine("Pour le point A3 " + cloneA3);
             */
+            Fraction f3 = new Fraction(120, -150);
+            f3.Reduire();
+            Console.WriteLine(f3.ToString());
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System.Drawing;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.ObjectiveC;
 
 namespace ClassLibraryFraction
 {
@@ -140,8 +142,52 @@ namespace ClassLibraryFraction
 
         // reduire
 
+        public void Reduire()
+        {
+            int pgcd = this.GetPgcd();
+            (this.numerateur, this.denominateur) = (this.numerateur / pgcd, this.denominateur / pgcd);
+            if (this.denominateur < 0)
+                {
+                this.numerateur *= -1;
+                this.denominateur *= -1;
+                }                        
+        }
 
+        // pgcd
 
+        private int GetPgcd()
+        {
+            int a = this.numerateur;
+            int b = this.denominateur;
+            int pgcd = 1;
+        if(a != 0 &&  b != 0) 
+            {
+                if (a < 0) a = -a;
+                if (b < 0) b = -b;
+                while (a != b)
+                {
+                    if (a < b)
+                    {
+                        b = b - a;
+                    }
+                    else 
+                    {
+                    a = a- b;
+                    }
+                }
+                pgcd = a;
+            }
+                return pgcd;
+        }
+
+        // plus
+
+        public Fraction Plus(Fraction _autreFraction)
+        {
+            int a = this.numerateur + _autreFraction.numerateur;
+            int b = this.denominateur+ _autreFraction.denominateur;
+            return new Fraction(a, b);          
+        }
 
     }
 }
