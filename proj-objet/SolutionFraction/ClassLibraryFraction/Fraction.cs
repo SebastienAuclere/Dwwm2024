@@ -39,7 +39,7 @@ namespace ClassLibraryFraction
         // afficher
         public override string ToString()
         {
-            return "le numérateur est : " + numerateur + " et le dénominateur est : " + denominateur + " ils sont séparés par une division.";
+            return numerateur + "/" + denominateur;
         }
         
         // representation textuelle
@@ -56,28 +56,15 @@ namespace ClassLibraryFraction
             }            
         }
 
-        // oppose 1        
-        /*
-        public Fraction Oppose() //pour une fonction
-        {
-            return new Fraction(-(this.numerateur), this.denominateur);
-        }
-        */
-        // oppose 2
+     
+        // oppose 1
         
         public void Oppose() //pour une procedure
         {
             this.numerateur = -this.numerateur;            
         }
-
-        // inverse 1
-        /*
-        public Fraction Inverse()
-        {
-            return new Fraction(this.denominateur, this.numerateur);
-        }
-        */
-        //inverse 2
+        
+        //inverse 1
 
         public void Inverse() //pour une procedure
         {
@@ -184,10 +171,52 @@ namespace ClassLibraryFraction
 
         public Fraction Plus(Fraction _autreFraction)
         {
-            int a = this.numerateur + _autreFraction.numerateur;
-            int b = this.denominateur+ _autreFraction.denominateur;
-            return new Fraction(a, b);          
+            int numerateurN = this.numerateur * _autreFraction.denominateur + _autreFraction.numerateur * this.denominateur;
+            int denominateurN = this.denominateur * _autreFraction.denominateur;
+
+            Fraction s = new Fraction(numerateurN, denominateurN);
+            s.Reduire();
+
+            return s;
+            
         }
 
+        // moins
+        public Fraction Moins(Fraction _autreFraction) 
+        {
+            int numerateurN = this.numerateur * _autreFraction.denominateur - _autreFraction.numerateur * this.denominateur;
+            int denominateurN = this.denominateur * _autreFraction.denominateur;
+            
+            Fraction t = new Fraction(numerateurN, denominateurN);
+            t.Reduire();
+            
+            return t;
+        }
+
+        // multiplie
+
+        public Fraction Multiplie(Fraction _autreFraction)
+        {
+            int numerateurN = this.numerateur * _autreFraction.numerateur;
+            int denominateurN = this.denominateur * _autreFraction.denominateur;
+
+            Fraction t = new Fraction(numerateurN, denominateurN);
+            t.Reduire();
+
+            return t;
+        }
+
+        // divise
+
+        public Fraction Divise(Fraction _autreFraction)
+        {
+            int numerateurN = this.numerateur * _autreFraction.denominateur;
+            int denominateurN = this.denominateur * _autreFraction.numerateur;
+
+            Fraction t = new Fraction(numerateurN, denominateurN);
+            t.Reduire();
+
+            return t;
+        }
     }
 }
