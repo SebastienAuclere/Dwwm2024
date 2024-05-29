@@ -1,6 +1,7 @@
 ﻿using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.ObjectiveC;
+using System.Security.Cryptography.X509Certificates;
 
 namespace ClassLibraryFraction
 {
@@ -102,9 +103,7 @@ namespace ClassLibraryFraction
         public bool SuperieurA(Fraction f1)
         {
             return (double)this.numerateur / this.denominateur > (double)f1.numerateur / f1.denominateur;
-        }
-        
-
+        }     
 
         // egalA
         /*
@@ -218,5 +217,12 @@ namespace ClassLibraryFraction
 
             return t;
         }
+
+        // surcharge operateur plus
+
+        public static Fraction operator +(Fraction f1, Fraction f2)            
+        {
+            return (f1.Plus(f2));         
+        }  
     }
 }

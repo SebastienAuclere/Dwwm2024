@@ -32,10 +32,10 @@ namespace FractionApp
             Point cloneA3 = a3.SymetrieAxeAbscisse();
             Console.WriteLine("Pour le point A3 " + cloneA3);
             */
-            Fraction t = new Fraction(1, 2);
-            Fraction f4 = new Fraction(3, 4);
+            Fraction f1 = new Fraction(1, 4);
+            Fraction f2 = new Fraction(2, 4);
             
-            Fraction f5 = t.Divise(f4);
+            Fraction f5 = f1+f2;
             
             Console.WriteLine(f5.ToString());
         }
