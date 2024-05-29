@@ -7,6 +7,13 @@ namespace FractionApp
     {
         static void Main(string[] args)
         {
+            try 
+            {
+            if (numerateur == 0 || denominateur == 0) 
+                {
+                
+                }
+            }
             /*
             Fraction c = new Fraction(8,12);         
             c.Oppose();
@@ -38,6 +45,8 @@ namespace FractionApp
             Fraction f5 = f1+f2;
             
             Console.WriteLine(f5.ToString());
+
+
         }
     }
 }
