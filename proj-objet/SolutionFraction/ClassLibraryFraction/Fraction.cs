@@ -223,6 +223,24 @@ namespace ClassLibraryFraction
         public static Fraction operator +(Fraction f1, Fraction f2)            
         {
             return (f1.Plus(f2));         
-        }  
+        }
+        
+        // exception
+
+        static void checkFraction(int numerateur, int denominateur) 
+        {
+            if(numerateur == 0 || denominateur ==0)
+            {
+                throw new ArithmeticException("operation impossible : on ne peut pas diviser par 0");
+            }         
+            else
+            {
+                Console.WriteLine("vous pouvez faire l'operation ");
+            }
+        }
+        static void Main(string[] args)
+        {
+            checkFraction(1, 1);
+        }
     }
 }
