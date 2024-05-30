@@ -227,9 +227,9 @@ namespace ClassLibraryFraction
         
         // exception
 
-        static void checkFraction(int numerateur, int denominateur) 
+        static void CheckFraction(int numerateur, int denominateur) 
         {
-            if(numerateur == 0 || denominateur ==0)
+            if(denominateur ==0)
             {
                 throw new ArithmeticException("operation impossible : on ne peut pas diviser par 0");
             }         
@@ -240,7 +240,7 @@ namespace ClassLibraryFraction
         }
         static void Main(string[] args)
         {
-            checkFraction(1, 1);
+            CheckFraction(1, 1);
         }
     }
 }
