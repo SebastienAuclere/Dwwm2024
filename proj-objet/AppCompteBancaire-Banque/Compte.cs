@@ -23,7 +23,7 @@ namespace AppCompteBancaire_Banque
         public int Numero { get => numero; }
         public string Nom { get => nom; }
         public double Solde { get => solde; }
-        public double DecouvertAutorise { get => decouvertAutorise; set => decouvertAutorise = value; }
+        public double DecouvertAutorise { get => decouvertAutorise; set => decouvertAutorise = value; } // attention faire methode !!!
                      
 
         //constructeurs

@@ -1,0 +1,41 @@
+function afficherDate() {
+    let maDate = new Date();
+    let annee = maDate.getFullYear();
+    let mois = maDate.getMonth() + 1;
+    let date = maDate.getDate();
+
+    let chaineDate = date + '/' + mois + '/' + annee;
+    //chaineDate = maDate.toLocalDateString();
+    return chaineDate;
+}
+
+let monBtnDate = document.querySelector('#btndate');
+monBtnDate.addEventListener('click', function () {
+    document.getElementById('txtdate').value = afficherDate();
+}
+);
+
+/*function afficherHeure() {
+    let monHeure = new Date();    
+    let heure = monHeure.getHeure();
+
+    let chaineHeure = heure;
+    //chaineDate = maDate.toLocalDateString();
+    return chaineHeure;
+}
+
+let monBtnHeure = document.querySelector('#btnheure');
+monBtnHeure.addEventListener('click', function () {
+    document.getElementById('txtheure').value = afficherHeure();
+}
+);
+*/
+
+const d = new Date();
+document.getElementById("txtheure").innerHTML = d.getHours();
+
+
+
+
+
+
