@@ -1,0 +1,26 @@
+body{
+    background-color: rgb(204, 204, 255);
+}
+
+fieldset.contener{
+    width:50%;
+    background-color: rgb(51, 185, 152);
+    border:4px solid white;  
+}
+
+div.arround{
+    display:inline-block;
+    margin:4px;    
+}
+
+.right{
+    display: block;
+    float: right;
+    margin-top: 3%;
+    margin-right: 7%;
+
+}
+
+
+
+

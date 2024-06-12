@@ -1,0 +1,25 @@
+function verifPrenom() {
+    const x = document.querySelector("#prenom");
+    console.log(x);
+    if (x.value == "") {
+        const y = document.querySelector('#resultat');
+        console.log(y)
+        y.textContent = "Compléter/corriger le formulaire";
+    }
+}
+
+document.querySelector('#age').addEventListener('change', function () {
+    verifAge();
+})
+
+function verifAge() {
+    const z = document.querySelector("#age");
+    console.log(z);
+    if (!(z.value >= z.min && z.value <= z.max && Number.isInteger(Number(z.value)))) {
+        const w = document.querySelector('#resultat');
+        w.textContent = "rentre un vrai age ducon";
+    } else {
+        const w = document.querySelector('#resultat');
+        w.textContent = z.value;
+    }
+}
