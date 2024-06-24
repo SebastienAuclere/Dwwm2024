@@ -1,22 +1,35 @@
-const boutonValide = document.querySelector('#btn1');
-boutonValide.addEventListener('click', function () {
-    const retourChampDate = verifDate();
-    const resultat = document.querySelector()
-}) 
+const boutonCalculer = document.getElementById('btn1');
+const valeurDate = document.getElementById('date');
+const annees = document.getElementById('annees');
+console.log(boutonCalculer, valeurDate);
 
-function verifDate() {
-    const dateValeur = document.querySelector("#date");
-    if (dateValeur.value == "") {
-        return null;
-    }
-    else if (dateValeur.value >= Date.now) {
-        return (resultat.innerHTML) = "Sélectionnez une date dans le passé s'il vous plait !!"         
-    }
-    else {
-        return (resultat.innerHTML) = "Vous êtes né le " + dateValeur.value + "./nIl s'est écoulé "
-        + (Date.now - dateValeur.value) + "depuis votre naissance";
-    }
-}
+boutonCalculer.addEventListener('click', function () {
+
+    let date = new Date(valeurDate.value);
+
+    let dateFr = date.toLocaleDateString();
+
+    let heureFr = date.toLocaleTimeString();
+
+    console.log(valeurDate.type)
+    console.log(date)
+    console.log(dateFr)
+    console.log(heureFr)
+
+    const resultat = document.getElementById('resultat');
+
+    console.log(resultat);
+
+    resultat.textContent = `Vous êtes né le ${dateFr} à ${heureFr}.`
+
+    let dateAujourdhui = new Date();
+
+    let anneesEcoulees = (dateAujourdhui.getFullYear() - date.getFullYear())
+
+    console.log(anneesEcoulees)
+
+    annees.textContent = `Il s'est écoulé ${anneesEcoulees} années depuis votre naissance.`
+})
 
 
 
@@ -27,4 +40,5 @@ function verifDate() {
 
 
 
-  
+
+

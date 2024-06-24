@@ -1,11 +1,24 @@
-body {
-    background-image: url("/image/background.jpg");
-    background-position-x:center; 
-    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+*{
+    box-sizing: border-box;
 }
 
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    background-image: url("/image/background.jpg");
+    background-position-x:center; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0%;
+    padding: 0%;   
+}
+
+
+
 header{
-    height: 67rem;
+    height: 107rem;
     color:white
 }
 
@@ -18,33 +31,39 @@ p{
     text-align: center;
 }
 
-.head-center {
+ .head-center {
     margin-top: 15%;
 
 }
 
 .premierTitre {
     font-size: 4rem;
-}
+} 
 
-.fleche {
+ .fleche {
     display: block;
     margin: auto; 
     margin-top: 8rem;
     margin-bottom: 18rem;  
+} 
+
+nav{
+    display: flex;
+    justify-content: center;
 }
 
-menu li{
+nav li{
     display: inline-block;
+}
+
+ul{
+    padding-left: 0;
 }
 
 ul li{
     background-color: aqua;
-    padding:1rem;
-}
-
-{
-    
+    width:18rem;
+    padding:1rem;   
 }
 
 a{

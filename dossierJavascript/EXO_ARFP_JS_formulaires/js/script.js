@@ -4,24 +4,24 @@ const MAX_VAL = 120;   //a partir du fichier html (alex)
 
 
 
-const monBtnValide = document.querySelector('#btn1');  //recupère l'id du bouton 1 et le stocke dans une variable
+const monBtnValide = document.getElementById('btn1');  //recupère l'id du bouton 1 et le stocke dans une variable
 monBtnValide.addEventListener('click', function () {   //se sert de la variable pour creer un event au click et applique la function
     const retourChampPrenom = verifPrenom();
     const retourChampAge = verifAge();
-    const resultat = document.querySelector('#resultat');
-    const majorite = document.querySelector('#majorite');
-    const retraite = document.querySelector('#retraite');
+    const resultat = document.getElementById('resultat');
+    const majorite = document.getElementById('majorite');
+    const retraite = document.getElementById('retraite');
 
     console.log(retourChampPrenom, retourChampAge)
 
     if (retourChampPrenom != null && retourChampAge != null) {
-        resultat.innerHTML = "Bonjour <span style='color:blue'>" + retourChampPrenom + "</span>, votre âge est : <span style='color:blue'> " + retourChampAge + "</span> an(s).";
+        resultat.innerHTML = `Bonjour <span class='toto'>${retourChampPrenom}</span>, votre âge est : <span class='toto'>${retourChampAge}</span> an(s)`;
         if (retourChampAge >= 18) {
-            majorite.innerHTML = "Vous êtes <span style='color:blue'>majeur</span>"; //span change la couleur dans le javascript
+            majorite.innerHTML = "Vous êtes <span class='toto'>majeur</span>"; //span change la couleur dans le javascript
                                                                                      //directement   
         }
         else {
-            majorite.innerHTML = "Vous êtes <span style='color:blue'>mineur</span>";
+            majorite.innerHTML = "Vous êtes <span class='toto'>mineur</span>";
         }
     }
     else {
@@ -30,11 +30,11 @@ monBtnValide.addEventListener('click', function () {   //se sert de la variable 
 
     if (retourChampAge < 64) {
         const differenceAge = (64 - retourChampAge);
-        retraite.innerHTML = "Il vous reste <span style='color:blue'>" + differenceAge + "</span> année(s) avant la retraite."
+        retraite.innerHTML = `Il vous reste <span class='toto'>${differenceAge}</span> année(s) avant la retraite.`
     }
     else if (retourChampAge > 64) {
         const ageSuperieur = (retourChampAge - 64);
-        retraite.innerHTML = "Vous êtes à la retraite depuis <span style='color:blue'>" + ageSuperieur + "</span> année(s)."
+        retraite.innerHTML = `Vous êtes à la retraite depuis <span class='toto'>${ageSuperieur}</span> année(s).`
     }
     else {
         retraite.textContent = "Vous prenez votre retraite cette année ! "
@@ -43,7 +43,7 @@ monBtnValide.addEventListener('click', function () {   //se sert de la variable 
 )
 
 function verifPrenom() {
-    const x = document.querySelector("#prenom"); //on recupere l id prenom et on le stock dans x 
+    const x = document.getElementById("prenom"); //on recupere l id prenom et on le stock dans x 
     if (x.value == "") {  //on fait la condition par rapport a la valeur de x et on compare si le champ n'est pas vide
         return null;      //ca retourne null si c vide 
     }
@@ -54,7 +54,7 @@ function verifPrenom() {
 }
 
 function verifAge() {
-    const z = document.querySelector("#age"); //dans z on met l'age du p avec l'id age 
+    const z = document.getElementById("age"); //dans z on met l'age du p avec l'id age 
     if (Number.isInteger(Number(z.value)) &&  // on teste si z est un integer
         Number(z.value) > MIN_VAL &&          // ne pas oublier a mettre number pour z, est il sup a min val  
         Number(z.value) <= MAX_VAL) {         // pareil pour max val  
