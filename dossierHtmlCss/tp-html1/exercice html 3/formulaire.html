@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon premier formulaire</title>
+</head>
+<body>
+    <h1>Formulaires d'inscription</h1>
+    <h2>Votre compte configuré en 2 minutes</h2>
+    <form action="formulaire.html" method="get">
+        <fieldset>
+            <legend>Etat civil</legend>
+            <label for="nom">Entrez votre nom: </label>
+            <input type="text" name="nom" id="nom"><br>
+            <label for="prenom">Entrez votre prénom: </label>
+            <input type="text" name="prénom" id="prenom"><br>            
+            <label for="birthday">Date de naissance: </label>
+            <input type="date" id="birthday" name="birthday">
+        </fieldset>
+        <fieldset>
+            <legend>Informations de contact</legend>
+            <label for="email">Entrez votre email: </label>
+            <input type="email" name="email" id="email"><br>
+            <label for="phone">Téléphone: </label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"   required="true"  ><br>
+        </fieldset>
+        <fieldset>
+            <input type="checkbox" id="valider" name="valider" value="valider" required="true">
+            <label for="valider">J'accepte les <a href="test">conditions particulières</a></label><br>
+    	    <input type="submit" formmethod="get" value="S'incrire">
+        </fieldset>    
+    </form>    
+</body>
+</html>

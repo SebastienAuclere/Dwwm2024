@@ -1,23 +1,30 @@
-const resultat = document.querySelector('#resultat');
-// const retourChampDate = verifierDate();
-const btnCalculer = document.querySelector("#btn1");
-btnCalculer.addEventListener('click', function () {
-    resultat.innerHTML = "Vous êtes né le " + verifierDate();
-})
+const boutonValide = document.querySelector('#btn1');
+boutonValide.addEventListener('click', function () {
+    const retourChampDate = verifDate();
+    const resultat = document.querySelector()
+}) 
 
-function verifierDate() {
-    const x = document.querySelector('#date')
-    console.log(x);
-    if (x.value == "") {
+function verifDate() {
+    const dateValeur = document.querySelector("#date");
+    if (dateValeur.value == "") {
         return null;
     }
+    else if (dateValeur.value >= Date.now) {
+        return (resultat.innerHTML) = "Sélectionnez une date dans le passé s'il vous plait !!"         
+    }
     else {
-        return x.value
-    }    
+        return (resultat.innerHTML) = "Vous êtes né le " + dateValeur.value + "./nIl s'est écoulé "
+        + (Date.now - dateValeur.value) + "depuis votre naissance";
+    }
 }
 
-function decouperDate() {
-    const chaineCar = document.querySelector(verifierDate);
-     
 
-}
+
+
+
+
+
+
+
+
+  

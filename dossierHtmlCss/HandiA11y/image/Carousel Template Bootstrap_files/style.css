@@ -1,0 +1,62 @@
+header{
+    /* position: relative */
+}
+
+.form-margin{
+    background-color: rgb(247, 245, 245);
+    margin:1% 10%;
+    padding: 3% 0% 10% 0%;
+    border: 1px solid rgb(228, 225, 225);
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px rgb(241, 240, 240);
+}
+
+input, textarea, select{
+    box-shadow: 2px 2px 2px rgb(233, 232, 232);
+}
+
+select{
+    margin-bottom:2%
+}
+
+.form-button{
+    box-shadow: 2px 2px 2px rgb(216, 215, 215);
+    float: right;   
+    margin-top: 3%; 
+}
+
+.sous-titre{
+    font-style: italic;
+    color:rgb(145, 142, 142);
+}
+
+.index{ 
+    width: 90%;   
+    position: absolute;
+    left:5%;
+    top:5%;    
+    z-index: 1000;
+    border-radius: 15px;
+}
+
+img{
+    min-width: 90px;
+}
+
+.onclick{
+    width:50%;
+}
+
+.breadcrumb{
+    justify-content: center;
+}
+
+@media screen and (max-width: 570px){
+    .index{
+        width: 100%;
+        position: static;
+        border-radius: 0px;
+    }
+
+    
+}

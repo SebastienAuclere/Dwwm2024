@@ -1,0 +1,67 @@
+body {
+    background-image: url("/image/background.jpg");
+    background-position-x:center; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;   
+}
+
+header{
+    height: 67rem;
+    color:white
+}
+
+h1{
+    text-align: center;
+    text-transform: uppercase;
+}
+
+p{
+    text-align: center;
+}
+
+.head-center {
+    margin-top: 15%;
+
+}
+
+.premierTitre {
+    font-size: 4rem;
+}
+
+.fleche {
+    display: block;
+    margin: auto; 
+    margin-top: 8rem;
+    margin-bottom: 18rem;  
+}
+
+menu li{
+    display: inline-block;
+}
+
+ul li{
+    background-color: aqua;
+    padding:1rem;
+}
+
+{
+    
+}
+
+a{
+    text-decoration: none;
+    color:white;
+}
+
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}

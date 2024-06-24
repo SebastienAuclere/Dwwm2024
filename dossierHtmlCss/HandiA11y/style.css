@@ -1,0 +1,175 @@
+* {
+    box-sizing: border-box;   
+}
+
+:root {
+    --couleur-texte: black;
+    --couleur-fond: white;
+    --couleur-primaire: #1a4cd4;
+    --couleur-secondaire: #9acfe4;
+    --couleur-texte-menu:white;
+    --couleur-tableau-titre:rgb(141, 139, 139);
+    --police-nav: Verdana, Geneva, Tahoma, sans-serif;
+    --couleur-lien:purple;
+}
+
+@font-face{
+    font-family: access-dys;
+    src:url(./opendyslexicalta-regular-webfont.woff2);
+}
+
+body{
+    background-color: var(--couleur-fond);
+    color: var(--couleur-texte);
+    font-family: access-dys;
+    margin: 0%;
+    padding: 0%;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;   
+    background-color: var(--couleur-primaire);           
+}
+
+nav{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    justify-items:center;
+    height: 9em;
+    margin-right: 2em;    
+}
+
+nav>a{
+    color: var(--couleur-texte-menu);
+    text-decoration: none;
+}
+
+header>div>a{
+    color: var(--couleur-texte-menu);
+    text-decoration: none;
+}
+
+div>a{
+    display: flex;
+    justify-content: center;
+    margin: 1.0em;
+}
+
+div>img{    
+    margin-left: 1.5em;
+    width: 8em;
+}
+
+ul{
+    display: flex;   
+    list-style-type: none;
+    color: var(--couleur-texte-menu);    
+}
+
+li{
+    padding: 0.2em;
+}
+
+.style-li{
+    background-color: var(--couleur-fond);
+    color:var(--couleur-texte)
+     
+}
+
+input[type]{
+    padding: 0.5em;    
+    font-size: 1em;
+    margin:1em 0;
+}
+
+::placeholder{
+    font-family: access-dys;
+    /* src: url(./opendyslexicalta-regular-webfont.woff2); */    
+}
+
+button{
+    background-color: rgb(252, 198, 22);
+    font-family: access-dys;
+    padding: 0.45em;
+}
+
+span>h3{
+    text-align: left;
+}
+
+h1, h2, h3{
+    text-align: center;
+}
+
+.sec-1{
+    text-align: justify;
+    margin: 0em 11em; 
+}
+
+.container{
+    display:flex;
+}
+
+section>.card{    
+    justify-content: space-around;
+    margin:2em;
+    padding:0.5em;
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px grey;
+}
+
+span{
+    background-color: var(--couleur-secondaire);
+    max-width: 20em;
+}
+
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+th, tr, td{
+    border: 2px solid black;
+    padding: 0.5em;    
+}
+
+th{
+    background-color: var(--couleur-tableau-titre);
+    color: var(--couleur-texte-menu)
+}
+
+section>img{
+    width: 50%;
+    margin: 0 25%;
+}
+
+.center{
+    text-align: center;
+}
+
+.copy{
+    text-align: center;
+}
+
+footer{
+    text-align: center;
+    background-color: var(--couleur-primaire);
+    color: var(--couleur-texte-menu);
+    padding: 0.5em;
+    margin-top: 2em;
+}
+
+footer>p>a {
+    color: var(--couleur-texte-menu);
+}
+
+.titre-gras{
+    font-weight: bold;
+}
+

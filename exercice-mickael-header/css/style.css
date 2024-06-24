@@ -1,0 +1,105 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    background-color: pink;
+    margin: 0rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;    
+}
+
+.head{
+    background-color: #003366 ;
+    margin-top:2rem;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding: 2rem;    
+}
+
+h1{
+    color:#ff66ff ;
+}
+
+h1::first-letter{
+    color:white;
+}
+
+.color1{
+    background-color: #9900cc;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    padding: 1rem;
+}
+
+.color2{
+    background-color: #ff66ff;
+    list-style-type: none;    
+    width:10rem;
+    height:3rem;
+    text-align: center;
+    padding-top: 4px;
+    border-radius: 4px;
+}
+
+.navi{     
+    display: flex;
+    justify-content: space-around; 
+}
+
+.color3{
+    background-color: #003366;
+    color:white;
+    list-style-type: none;
+    width: 10rem;
+    height: 3rem;
+    text-align: center;
+    padding-top: 4px;
+    border-radius: 4px;    
+}
+
+main{
+    padding-left: 4rem;
+    padding-right:4rem;
+}
+
+.color4{
+    background-color: #ff66ff;
+    color: white;
+    width:20%;
+    height: 30rem;
+}
+
+.color5{
+    background-color: white;
+    width: 60%;
+    border-left:3px solid #9900cc ;
+    border-right: 3px solid #9900cc;
+}
+ 
+h2{
+    margin-left:1rem;
+}
+
+.color6{
+    background-color:#003366;
+    color:#ff66ff;
+    margin-left: 4rem;
+    margin-right: 4rem;  
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr) ;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+p{
+    margin-left: 3rem;
+}
