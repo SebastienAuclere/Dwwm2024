@@ -3,6 +3,7 @@ const valeurDate = document.getElementById('date');
 const annees = document.getElementById('annees');
 console.log(boutonCalculer, valeurDate);
 
+
 boutonCalculer.addEventListener('click', function () {
 
     let date = new Date(valeurDate.value);
@@ -29,6 +30,13 @@ boutonCalculer.addEventListener('click', function () {
     console.log(anneesEcoulees)
 
     annees.textContent = `Il s'est écoulé ${anneesEcoulees} années depuis votre naissance.`
+
+    let jour = date.getDate();
+    let mois = date.getMonth();
+
+
+    switch (valeurDate) {
+        case       
 })
 
 

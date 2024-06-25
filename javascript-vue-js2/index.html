@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction VueJS</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./assets/js/main.js" type="module"></script>
+</head>
+
+<body id="monApp">
+    <h1>Changer la taille du texte</h1>
+    <div>
+        <button type="button" @click="increaseSize">Augmenter la taille du texte</button>
+        <button type="button" @click="decreaseSize">Diminuer la taille du texte</button>
+        <span>Taille actuelle : {{realTextSize}} px</span>
+        <input type="number" v-model="textSize">
+    </div>
+    <p :style="{'font-size': `${realTextSize}px`}">Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab beatae
+        provident vel consectetur, repellat at placeat facere molestiae maxime
+        odit mollitia praesentium tenetur distinctio! Nihil vitae ipsa vero
+        deserunt iure. Quos cum minima eveniet et voluptatem reprehenderit
+        quibusdam a id officia dolorem cupiditate sit delectus praesentium
+        soluta debitis illum corporis saepe illo earum enim pariatur obcaecati,
+        ducimus quasi! Cupiditate, libero?
+    </p>
+</body>
+
+</html>
