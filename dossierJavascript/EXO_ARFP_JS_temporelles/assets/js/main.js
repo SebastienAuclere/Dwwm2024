@@ -1,6 +1,9 @@
 const boutonAfficherDateduJour = document.getElementById('btn1');
 const valeurDate = document.getElementById('date');
 const valeurHeure = document.getElementById('time');
+const boutonAfficherDateduJour2 = document.getElementById('btn2');
+const valeurDate2 = document.getElementById('date2');
+const valeurHeure2 = document.getElementById('time2')
 
 console.log(boutonAfficherDateduJour, valeurDate);
 
@@ -10,8 +13,8 @@ boutonAfficherDateduJour.addEventListener('click', function () {
     let date = new Date(valeurDate.value);
 
     let dateFr = date.toLocaleDateString();
-
-    let heureFr = date.toLocaleTimeString();
+   
+    let heureFr = valeurHeure.value;
 
     console.log(valeurDate.type)
     console.log(date)
@@ -22,8 +25,21 @@ boutonAfficherDateduJour.addEventListener('click', function () {
 
     console.log(resultat);
 
-    resultat.textContent = `Aujourd'hui nous sommes le ${dateFr}, l'heure courante est ${heureFr}.`
+    resultat.innerHTML = `Aujourd'hui nous sommes le <span class="toto">${dateFr}</span>, 
+    l'heure courante est <span class="toto">${heureFr}</span>.`
 
+}
+
+)
+
+boutonAfficherDateduJour2.addEventListener('click', function () {
+
+    let date2 = new Date(valeurDate2);
+    
+    let dateFr2 = date2.toLocaleDateString();
+
+    let heureFr2 = valeurHeure
+})    
 //     let dateAujourdhui = new Date();
 
 //     let anneesEcoulees = (dateAujourdhui.getFullYear() - date.getFullYear())
@@ -90,6 +106,3 @@ boutonAfficherDateduJour.addEventListener('click', function () {
 //         alert('ca marche pas');
 //     }
 
-// }
-
-// )
