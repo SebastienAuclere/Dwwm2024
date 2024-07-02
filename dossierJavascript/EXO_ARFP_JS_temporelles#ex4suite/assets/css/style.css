@@ -1,0 +1,22 @@
+.border{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border:2px solid blue;
+    padding-left:1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    margin:1rem;
+}
+
+input{
+    color:blue;
+    border-color: blue;
+    
+}
+
+hr{
+    border : 2px solid black;   
+}
+
+.toto{
+    color:blue;
+}

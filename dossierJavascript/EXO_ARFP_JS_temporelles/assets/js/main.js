@@ -1,29 +1,43 @@
 const boutonAfficherDateduJour = document.getElementById('btn1');
 const valeurDate = document.getElementById('date');
 const valeurHeure = document.getElementById('time');
-const boutonAfficherDateduJour2 = document.getElementById('btn2');
+const boutonCalculerIntervalle = document.getElementById('btn2');
 const valeurDate2 = document.getElementById('date2');
 const valeurHeure2 = document.getElementById('time2')
 
 console.log(boutonAfficherDateduJour, valeurDate);
 
+let date;
+
 
 boutonAfficherDateduJour.addEventListener('click', function () {
 
-    let date = new Date(valeurDate.value);
+
+
+    date = new Date();
 
     let dateFr = date.toLocaleDateString();
-   
-    let heureFr = valeurHeure.value;
 
-    console.log(valeurDate.type)
-    console.log(date)
-    console.log(dateFr)
-    console.log(heureFr)
+    let heureFr = date.toLocaleTimeString();
+
+    let dateFr2 = date.toISOString(); // "2024-07-01T10:24:25.375Z"
+    dateFr2 = dateFr2.split('T'); // séparer la date en 2, le T sera le séparateur
+    // le split crée un tableau : ['2024-07-01', '10:24:25.375Z']
+    dateFr2 = dateFr2[0]; // on récupère la 1ère entrée du tableau
+    console.log(dateFr2);
+
+    // console.log(valeurDate.type)
+    // console.log(date)
+    // console.log(dateFr)
+    // console.log(heureFr)
+
+    document.getElementById('date').value = dateFr2;
+    document.getElementById('time').value = heureFr;
+
 
     const resultat = document.getElementById('resultat');
 
-    console.log(resultat);
+    // console.log(resultat);
 
     resultat.innerHTML = `Aujourd'hui nous sommes le <span class="toto">${dateFr}</span>, 
     l'heure courante est <span class="toto">${heureFr}</span>.`
@@ -32,77 +46,32 @@ boutonAfficherDateduJour.addEventListener('click', function () {
 
 )
 
-boutonAfficherDateduJour2.addEventListener('click', function () {
+boutonCalculerIntervalle.addEventListener('click', function () {
 
-    let date2 = new Date(valeurDate2);
-    
+    date = new Date(valeurDate.value);
+
+    let dateFr = date.toLocaleDateString();
+
+    let date2 = new Date(valeurDate2.value);
+
     let dateFr2 = date2.toLocaleDateString();
 
-    let heureFr2 = valeurHeure
-})    
-//     let dateAujourdhui = new Date();
+    let heureFr2 = date2.toLocaleTimeString();
 
-//     let anneesEcoulees = (dateAujourdhui.getFullYear() - date.getFullYear())
 
-//     console.log(anneesEcoulees)
 
-//     annees.textContent = `Il s'est écoulé ${anneesEcoulees} années depuis votre naissance.`
+    let interval = date2.getTime() - date.getTime();
+    interval = Math.abs(interval / 1000 / 60 / 60 / 24);
+    interval = Math.round(interval);
 
-//     let astro = document.getElementById('astro');
+    const resultat2 = document.getElementById('resultat2');
 
-//     let jour = date.getDate();
-//     let mois = date.getMonth();
-//     console.log(jour, mois);
+    console.log(resultat2);
 
-//     if ((date.getDate() >= 20 && date.getMonth() == 0) ||
-//         (date.getDate() <= 18 && date.getMonth() == 1)) {
-//         astro.textContent = `Verseau.`
-//     }
-//     else if ((date.getDate() >= 19 && date.getMonth() == 1) ||
-//         (date.getDate() <= 20 && date.getMonth() == 2)) {
-//         astro.textContent = `Poisson.`
-//     }
-//     else if ((date.getDate() >= 21 && date.getMonth() == 2) ||
-//         (date.getDate() <= 19 && date.getMonth() == 3)) {
-//         astro.textContent = `Bélier.`
-//     }
-//     else if ((date.getDate() >= 20 && date.getMonth() == 3) ||
-//         (date.getDate() <= 20 && date.getMonth() == 4)) {
-//         astro.textContent = `Taureau.`
-//     }
-//     else if ((date.getDate() >= 21 && date.getMonth() == 4) ||
-//         (date.getDate() <= 20 && date.getMonth() == 5)) {
-//         astro.textContent = `Gémeaux.`
-//     }
-//     else if ((date.getDate() >= 21 && date.getMonth() == 5) ||
-//         (date.getDate() <= 22 && date.getMonth() == 6)) {
-//         astro.textContent = `Cancer.`
-//     }
-//     else if ((date.getDate() >= 23 && date.getMonth() == 6) ||
-//         (date.getDate() <= 22 && date.getMonth() == 7)) {
-//         astro.textContent = `Lion.`
-//     }
-//     else if ((date.getDate() >= 23 && date.getMonth() == 7) ||
-//         (date.getDate() <= 22 && date.getMonth() == 8)) {
-//         astro.textContent = `Vierge.`
-//     }
-//     else if ((date.getDate() >= 23 && date.getMonth() == 8) ||
-//         (date.getDate() <= 22 && date.getMonth() == 9)) {
-//         astro.textContent = `Balance.`
-//     }
-//     else if ((date.getDate() >= 23 && date.getMonth() == 9) ||
-//         (date.getDate() <= 21 && date.getMonth() == 10)) {
-//         astro.textContent = `Scorpion.`
-//     }
-//     else if ((date.getDate() >= 22 && date.getMonth() == 10) ||
-//         (date.getDate() <= 21 && date.getMonth() == 11)) {
-//         astro.textContent = `Sagittaire.`
-//     }
-//     else if ((date.getDate() >= 22 && date.getMonth() == 11) ||
-//         (date.getDate() <= 19 && date.getMonth() == 0)) {
-//         astro.textContent = `Capricorne.`
-//     }
-//     else {
-//         alert('ca marche pas');
-//     }
+    resultat2.innerHTML = `Il y a <span class="toto">${interval}</span>
+     jours entre aujourd'hui et le <span class="toto">${dateFr2}</span>
+     à <span class="toto">${heureFr2}</span>. `
+})
+
+
 
