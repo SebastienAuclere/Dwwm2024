@@ -1,0 +1,51 @@
+:root {
+    --base-bg: #111111;
+    --base-txt: #CCCCCC;
+    --base-link: #E4D9FF;
+    --base-btn: #085E8F;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;    
+}    
+
+body{
+    font-size: 1.6rem;
+    background-color: var(--base-bg);
+}
+
+div{
+    height: 60rem;
+    margin-top: 2rem;
+    margin-left:1rem;        
+    padding-left: 2rem;
+    border: 2px solid var(--base-txt);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:var(--base-txt);
+}
+
+p{
+    background-color:var(--base-txt);
+    padding:0.8rem;
+    display:inline;
+    color:var(--base-btn);
+}
+
+table{
+    background-color: var(--base-btn);
+    margin-top: 3rem;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+}
+
+th, td{
+    padding: 0.5rem;
+}
+
+th{
+    text-align: left;
+}
