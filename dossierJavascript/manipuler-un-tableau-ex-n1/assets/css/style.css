@@ -1,0 +1,29 @@
+.border {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 3px solid #8fa5bc;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    margin: 1rem;
+    background-color:#3d535c;
+    color:#94bdd1;
+}
+
+body{
+    background-color: #3d535c;
+}
+
+ul{
+   color: #b3cce6;
+}
+
+table, th, td {
+    border: 3px solid #6c8093;
+    padding: 4px;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: #61636b;
+    
+}

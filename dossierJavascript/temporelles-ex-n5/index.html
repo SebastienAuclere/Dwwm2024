@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="FR-fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/main.js" type="module"></script>
+</head>
+
+<body>
+    <div class="border">
+        <h1>Gestion des dates et des intervalles</h1>
+        <form action="#">
+            <label for="date1">Date actuelle :</label>
+            <input type="date" id="date1" name="date1" value="" readonly>
+            <label for="time1">Heure actuelle :</label>
+            <input type="time" id="time1" name="time1" value="" readonly>
+            <input type="button" value="Afficher Date du jour" id="btn1">
+        </form>
+        <hr>
+        <p id="resultat1">Cliquez pour afficher la date du jour</p>
+        <hr>
+        <h1>Sélectionner une date et une heure :</h1>
+        <form action="#">
+            <label for="date2">Date :</label>
+            <input type="datetime-local" id="date2" name="date2" value="">
+            <input type="button" value="Calculer l'intervalle" id="btn2">
+            <p id="resultat2">Combien il y a de jours entre aujourd'hui et ce jour?</p>
+        </form>
+    </div>
+</body>
+
+</html>
