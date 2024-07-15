@@ -13,14 +13,14 @@
     <div class="border">
         <h1>Liste des personnes inscrites</h1>
         <div class="div1">
-        <p>Ajouter une personne</p>    
+            <p>Ajouter une personne</p>
             <form action="#">
                 <label for="prenom">Prénom:</label>
-                <input type="text" id="prenom" name="prenom">
+                <input type="text" id="prenom" name="prenom" value="">
                 <label for="nom">Nom:</label>
-                <input type="text" id="nom" name="nom" min="1" max="120" value="">
+                <input type="text" id="nom" name="nom" value="">
                 <input type="button" value="Ajouter" id="btn1">
-            </form>    
+            </form>
         </div>
         <ul class="liste">
         </ul>
@@ -33,8 +33,11 @@
                     <th>Supprimer</th>
                 </tr>
             </thead>
+            <tbody id="bodyNom">
+                    
+            </tbody>
             <!--
-            <tbody class="table1">                
+            <tbody>                
                 <tr>
                     <td>Dev</td>
                     <td>Mike</td>
@@ -55,4 +58,5 @@
         </table>
     </div>
 </body>
+
 </html>
