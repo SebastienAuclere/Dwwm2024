@@ -42,14 +42,19 @@ function moyenneClass() {
     return notes / table.length;
 }
 
-function auDessusMoyenne() {
-    for (let eleve of table) {
-        let nbreEleves = table.length;
-        resultat = nbreEleves - (eleve.grade > moyenneClass());        
-    }
-    return "Nombre d'étudiants au dessus de la moyenne : " + resultat;
-}
 
+
+function auDessusMoyenne() {
+    const moyenne = moyenneClass()
+    let i = 0;
+    for (let eleve of table) {        
+        if (+eleve.grade > moyenne) {            
+            i++
+        }                
+    }
+    return "Nombre d'étudiants au dessus de la moyenne : " + i;
+}
+ 
 
 
 let maListe = document.getElementById("list");
