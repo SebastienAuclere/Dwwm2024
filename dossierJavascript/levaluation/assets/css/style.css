@@ -19,9 +19,37 @@ body {
     font-size: 1.6rem;
     background-color: var(--color1);
 }
+.div1{
+    height: 28rem;
+    border: 2px dotted var(--color5);
+    padding-left: 1rem;
+}
 
-div {
-    height: 60rem;
+input{
+    margin: 1rem;
+    background-color: var(--color4);
+    border: 2px solid var(--color5);
+    padding: 0.5rem;
+    color: var(--color3);
+}
+
+.input1{
+    margin-left: 5rem;
+}
+
+.input2 {
+    margin-left: 11.70rem;
+    padding-right: 11rem;
+}
+
+.input3 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-left: 0rem;
+}
+
+.div2 {
+    height: 80rem;
     margin-top: 2rem;
     margin-left: 1rem;
     padding-left: 2rem;

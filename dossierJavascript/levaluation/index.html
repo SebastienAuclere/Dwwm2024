@@ -10,17 +10,30 @@
 </head>
 
 <body>
-    <div>
+    <div class="div2">
         <h1>Résultat de l'évaluation</h1>
+        <div class="div1">
+            <p>Ajouter une note</p>
+            <form action="#">
+                <label for="name">Nom Prénom:</label>
+                <input type="text" name="name" value=" "  class="input1" id="nomPrenom"><br>
+                <label for="note">Note:</label>
+                <input type="number" id="note" name="note" min="0" max="21" value="0" class="input2" id="note"><br>
+                <input type="button" value="Ajouter" class="input3" id="btn1">
+            </form>
+            <div id="ajoutpara">                
+            </div>
+        </div>
         <table>
             <thead>
                 <tr>
                     <th>Nom</th>
                     <th>Prénom</th>
                     <th>Note</th>
+                    <th>Obtenu</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="bodyNom">
                 <!-- <tr>                        
                         <td>Bower</td>
                         <td>Sarah</td>
@@ -30,7 +43,7 @@
         </table>
         <ul id="list">            
         </ul>
-    </div>
+    </div>    
 </body>
 
 </html>
