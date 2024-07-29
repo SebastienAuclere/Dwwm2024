@@ -3,6 +3,7 @@ const table = await response.json();
 
 let ajouterLigne = document.getElementById("btn1");
 let myBody = document.querySelector('#bodyNom');
+// let moyenne = moyenneClass()
 
 table.sort((a, b) => b.grade - a.grade);
 
@@ -44,13 +45,14 @@ ajouterLigne.addEventListener('click', function () {
     let nom = nomPrenom[0];
     let note = document.getElementById("note").value;
     let obtenu = evaluationObtenu(note);
+    console.log(nomPrenom);
 
     if (verifLongueur(nom) && verifLongueur(prenom) && isAlpha(nom) && isAlpha(prenom)) {
         ajouterUneLigne(nom, prenom, note, obtenu);
 
         const roland = {
             fullname: nomPrenom,
-            grade: note
+            grade: parseInt(note)
         }
         table.push(roland);
         console.log(table);
@@ -104,19 +106,29 @@ function nbreEtudiants() {
     return "Nombre d'étudiants : " + table.length;
 }
 
+// function moyenneClass() {
+//     let notes = 0
+//     for (let eleve of table) {
+//         notes = notes + eleve.grade
+//     }
+//     return (notes / table.length).toFixed(2);
+// }
+
 function moyenneClass() {
-    let notes = 0
-    for (let eleve of table) {
-        notes = notes + eleve.grade
+    let moyenne = 0;
+    for (let i = 0; i < table.length; i++) {        
+        moyenne += table[i].grade
     }
-    return (notes / table.length).toFixed(2);
+    moyenne = (moyenne / table.length).toFixed(2);
+    return moyenne;
 }
 
+
 function auDessusMoyenne() {
-    let moyenne = moyenneClass()
+    
     let i = 0;
     for (let eleve of table) {
-        if (eleve.grade > moyenne) {
+        if (eleve.grade > moyenneClass()) {
             i++
         }
     }
