@@ -4,6 +4,8 @@ const table = await response.json();
 let ajouterLigne = document.getElementById("btn1");
 let myBody = document.querySelector('#bodyNom');
 // let moyenne = moyenneClass()
+const para = document.getElementById("ajoutpara");
+
 
 table.sort((a, b) => b.grade - a.grade);
 
@@ -47,7 +49,8 @@ ajouterLigne.addEventListener('click', function () {
     let obtenu = evaluationObtenu(note);
     console.log(nomPrenom);
 
-    if (verifLongueur(nom) && verifLongueur(prenom) && isAlpha(nom) && isAlpha(prenom) && (note >= 0) && (note <= 20)) {
+
+    if (verifLongueur(nom) && verifLongueur(prenom) && isAlpha(document.getElementById("nomPrenom").value) && (note >= 0) && (note <= 20)) {
         ajouterUneLigne(nom, prenom, note, obtenu);
 
         const roland = {
@@ -56,7 +59,7 @@ ajouterLigne.addEventListener('click', function () {
         }
         table.push(roland);
         console.log(table);
-
+        viderPara();
     }
     else {
 
@@ -78,16 +81,19 @@ function verifLongueur(mot) {
     }
 }
 
-function isAlpha(str) {
-    return /^[a-z ]{2,}$/i.test(str);
+function isAlpha(toto) {
+    return /^[A-Z][a-z]+(?:-[A-Z][a-z]+)? [A-Z][a-z]+(?:-[A-Z][a-z]+)?$/.test(toto);
 }
 
 function nbCharacterMin() {
-    const para = document.getElementById("ajoutpara");
-    para.innerHTML = '';
+    viderPara();
     const ajout = document.createElement("p");
-    ajout.textContent = "Attention : Votre nom et prenom doivent contenir 2 lettres au minimum !"
+    ajout.textContent = "Attention : Votre nom et prenom doivent contenir 2 lettres au minimum et commencer par une majuscule suivi par des minuscules ET la note entre 0 et 20 !"
     para.appendChild(ajout);
+}
+
+function viderPara() {
+    para.innerHTML = '';
 }
 
 function ajouterUneLigne(nom, prenom, note, obtenu) {
