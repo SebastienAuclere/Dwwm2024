@@ -10,26 +10,52 @@
 <body>
     <div>
         <h1>Résultat de la course</h1>
-        <p>10 participants</p>
-        <p>Gagnant : Roy Makenzie</p>
+        <div>
+            <p id="participants">
+            </p>
+        </div>
+        <div>
+            <p id="gagnant">
+            </p>
+        </div>
+        <div>
+            <h2>Filtrer</h2>
+            <form action="#">
+                <input type="checkbox" id="France" name="pays1" value="France">
+                <label for="France">France</label>
+                <input type="checkbox" id="Belgique" name="pays2" value="Belgique">
+                <label for="Belgique">Belgique</label>
+                <input type="checkbox" id="Allemagne" name="pays3" value="Allemagne">
+                <label for="Allemagne">Allemagne</label>
+                <input type="checkbox" id="Pays-Bas" name="pays4" value="Pays-Bas">
+                <label for="Pays-Bas">Pays-Bas</label>
+                <input type="checkbox" id="Italie" name="pays5" value="Italie">
+                <label for="Italie">Italie</label>
+                <input type="checkbox" id="Espagne" name="pays6" value="Espagne">
+                <label for="Espagne">Espagne</label>
+                <input type="checkbox" id="Portugal" name="pays7" value="Portugal">
+                <label for="Portugal">Portugal</label>
+                <input type="checkbox" id="Pologne" name="pays8" value="Pologne"> 
+                <label for="Pologne">Pologne</label>
+                <input type="checkbox" id="Grèce" name="pays9" value="Grèce">
+                <label for="Grèce">Grèce</label>
+                <input type="checkbox" id="Autriche" name="pays10" value="Autriche">
+                <label for="Autriche">Autriche</label>
+            </form>
+        </div>
         <table>
             <thead>
                 <tr>
                     <th>Pays</th>
                     <th>Nom</th>
-                    <th>Prénom</th>
+                    <th>Prenom</th>
                     <th>Temps final</th>
-                </tr>                
+                </tr>
             </thead>
-            <tbody>
-                <!-- <tr>
-                    <td>Belgique</td>
-                    <td>Makenzie</td>
-                    <td>Roy</td>
-                    <td>27min01s</td>
-                </tr> -->
+            <tbody id="tableau">
             </tbody>
         </table>
     </div>
+    
 </body>
 </html>
