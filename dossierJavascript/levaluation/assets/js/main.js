@@ -47,7 +47,7 @@ ajouterLigne.addEventListener('click', function () {
     let obtenu = evaluationObtenu(note);
     console.log(nomPrenom);
 
-    if (verifLongueur(nom) && verifLongueur(prenom) && isAlpha(nom) && isAlpha(prenom)) {
+    if (verifLongueur(nom) && verifLongueur(prenom) && isAlpha(nom) && isAlpha(prenom) && (note >= 0) && (note <= 20)) {
         ajouterUneLigne(nom, prenom, note, obtenu);
 
         const roland = {
@@ -69,7 +69,7 @@ ajouterLigne.addEventListener('click', function () {
 })
 
 
-function verifLongueur(mot) { 
+function verifLongueur(mot) {
     if (mot.length < 2) {
         return false;
     }
@@ -79,7 +79,7 @@ function verifLongueur(mot) {
 }
 
 function isAlpha(str) {
-    return /^[a-zA-Z]{2,}$/.test(str);
+    return /^[a-z ]{2,}$/i.test(str);
 }
 
 function nbCharacterMin() {
@@ -106,17 +106,9 @@ function nbreEtudiants() {
     return "Nombre d'étudiants : " + table.length;
 }
 
-// function moyenneClass() {
-//     let notes = 0
-//     for (let eleve of table) {
-//         notes = notes + eleve.grade
-//     }
-//     return (notes / table.length).toFixed(2);
-// }
-
 function moyenneClass() {
     let moyenne = 0;
-    for (let i = 0; i < table.length; i++) {        
+    for (let i = 0; i < table.length; i++) {
         moyenne += table[i].grade
     }
     moyenne = (moyenne / table.length).toFixed(2);
@@ -125,7 +117,7 @@ function moyenneClass() {
 
 
 function auDessusMoyenne() {
-    
+
     let i = 0;
     for (let eleve of table) {
         if (eleve.grade > moyenneClass()) {
