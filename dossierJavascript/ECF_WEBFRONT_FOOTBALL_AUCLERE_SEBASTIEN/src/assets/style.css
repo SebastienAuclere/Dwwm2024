@@ -2,8 +2,9 @@
     --base-bg: #2D3142;
     --base-link: #BFC0C0;
     --base-txt: #EF8354;
-    --base-btn: #4F5D75;
+    --base-btn: #3d5680;
     --base-border: #4F5D75;
+    
 }
 
 * {
@@ -17,4 +18,43 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.6rem;
+    background-color: var(--base-bg);
+}
+
+.border{
+    border: 2px solid var(--base-border);
+    margin: 2rem;
+    padding: 2rem;
+}
+
+h1{
+    color: var(--base-link);
+}
+
+p{
+    background-color: var(--base-link);
+    font-weight:bold ;
+    color:var(--base-btn);
+    display: inline;
+    padding:0.50rem;
+}
+
+table{
+    background-color: var(--base-btn);
+    color:var(--base-link);
+}
+
+th, td {
+    padding:0.5rem;
+
+}
+
+input {
+    color: var(--base-txt);
+    margin:2rem;
+    margin-left:8rem;
+}
+
+placeholder {
+    color:var(--base-btn);
 }
