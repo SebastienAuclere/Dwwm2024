@@ -1,10 +1,10 @@
 :root {
     --base-bg: #2D3142;
-    --base-link: #BFC0C0;
+    --base-link: #a7d5d5;
     --base-txt: #EF8354;
     --base-btn: #3d5680;
     --base-border: #4F5D75;
-    
+
 }
 
 * {
@@ -21,40 +21,50 @@ body {
     background-color: var(--base-bg);
 }
 
-.border{
-    border: 2px solid var(--base-border);
+.border {
+    border: 0.3rem solid var(--base-border);
     margin: 2rem;
     padding: 2rem;
 }
 
-h1{
+h1 {
     color: var(--base-link);
 }
 
-p{
+p {
     background-color: var(--base-link);
-    font-weight:bold ;
-    color:var(--base-btn);
+    font-weight: bold;
+    color: var(--base-btn);
     display: inline;
-    padding:0.50rem;
+    padding: 0.50rem;
 }
 
-table{
+table {
     background-color: var(--base-btn);
-    color:var(--base-link);
+    color: var(--base-link);
+    text-align: center;
+    padding: 1rem;
 }
 
-th, td {
-    padding:0.5rem;
-
+th,
+td {
+    padding: 0.5rem;
 }
 
-input {
+#formulaire {
+    margin: 1.5rem;    
+}
+
+#filtrerLabel {
     color: var(--base-txt);
-    margin:2rem;
-    margin-left:8rem;
 }
 
-placeholder {
-    color:var(--base-btn);
+input {    
+    background-color: var(--base-btn);
+    margin-left: 4rem;
+    padding:1rem;
+}
+
+::placeholder {
+    color: var(--base-link);    
 }

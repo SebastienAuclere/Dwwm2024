@@ -5,21 +5,19 @@ const equipes = document.getElementById("pEquipes")
 equipes.textContent = nbreEquipes() + " équipes";
 
 function nbreEquipes() {
-    for (let i = 0; i < table.length; i++) {
-            if (table.team1 = table.team1) {
-                return 0
-            }
-            else {
-                return i++
-            }                
+    let equipe = 0;
+    for (let team of table) {
+        if (team.team1[0] === team.team1[1]) 
+            equipe++               
     }
-}
+    return equipe
+}  
 
 const matchs = document.getElementById("pMatch")
 matchs.textContent = nbreMatchJoues();
 
 function nbreMatchJoues() {
-    return table.length + " matchs joués"
+    return (table.length)*2 + " matchs joués"
 }
 
 for (const equipe of table) {
@@ -31,7 +29,7 @@ for (const equipe of table) {
 
     const td2 = document.createElement("td");
     td2.textContent = equipe.team2;
-    tr.appendChild(td2);
+    tr.appendChild(td2);    
 
     const td3 = document.createElement("td");
     let score = equipe.score;
@@ -40,7 +38,7 @@ for (const equipe of table) {
     tr.appendChild(td3);  
     
     const td4 = document.createElement("td");
-    td4.textContent = gagnant();
+    td4.textContent = gagnant1(equipe);
     tr.appendChild(td4);    
 
     const td5 = document.createElement("td");
@@ -50,33 +48,57 @@ for (const equipe of table) {
     tr.appendChild(td5);
 
     const td6 = document.createElement("td");
-    td6.textContent = gagnant();
+    td6.textContent = gagnant2(equipe);
     tr.appendChild(td6)    
     document.getElementById("donneeTableau").appendChild(tr);
 }
 
-function gagnant() {
-    for (const equipe of table) {
-        let resultat = equipe.score;
-        // resultat = resultat.split('-');
-        // console.log(resultat)
+function gagnant1(_equipe) {
+           
+        let resultat = _equipe.score;        
         let resultat1 = resultat[0];
-        // console.log(resultat[0])
-        let resultat2 = resultat[1];
-        // console.log(resultat[1])
-        if (resultat1 > resultat2) {            
-            return equipe.team1            
+        resultat1 = resultat1.split('-');
+        let resultatEquipe1 = +resultat1[0]        
+        let resultatEquipe2 = +resultat1[1]
+        
+        if (resultatEquipe1 > resultatEquipe2) {                        
+            return " " + _equipe.team1           
         }
-        else if (resultat1 = resultat2) {
+        else if (resultatEquipe2 > resultatEquipe1) {
+            return " " + _equipe.team2
+        }        
+        else {
             return "égalité"
+        }       
+    }    
+
+
+function gagnant2(_equipe) {
+    for (const equipe of table) {
+        let resultat = _equipe.score;
+        console.log(resultat)
+        let resultat2 = resultat[1];
+        resultat2 = resultat2.split('-');
+        let resultatEquipe1 = +resultat2[0]
+        let resultatEquipe2 = +resultat2[1]
+
+        if (resultatEquipe1 > resultatEquipe2) {
+
+            return " " + _equipe.team1
+        }
+        else if (resultatEquipe2 > resultatEquipe1) {
+
+            return " " + _equipe.team2
         }
         else {
-            return equipe.team2
-        }        
-    }    
+            return "égalité"
+        }
+    }
 }
 
-
+function deplacerDansTableau() {
+    
+}
 
 
 
