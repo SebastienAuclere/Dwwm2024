@@ -5,19 +5,29 @@ const equipes = document.getElementById("pEquipes")
 equipes.textContent = nbreEquipes() + " équipes";
 
 function nbreEquipes() {
-    let equipe = 0;
-    for (let team of table) {
-        if (team.team1[0] === team.team1[1]) 
-            equipe++               
-    }
-    return equipe
+    let equipe = [];
+    for (let team of table) {        
+        if (!equipe.includes(team.team1)) {
+            equipe.push(team.team1);
+        }
+        if (!equipe.includes(team.team2)) {
+            equipe.push(team.team2);
+        }                   
+    }    
+    return equipe.length;
 }  
 
 const matchs = document.getElementById("pMatch")
 matchs.textContent = nbreMatchJoues();
 
 function nbreMatchJoues() {
-    return (table.length)*2 + " matchs joués"
+    let matchJoues = 0
+    for (let rencontres of table) {
+        for (let match of rencontres.score) {            
+            matchJoues++
+        }
+    }
+    return (matchJoues) + " matchs joués"
 }
 
 for (const equipe of table) {
@@ -53,8 +63,7 @@ for (const equipe of table) {
     document.getElementById("donneeTableau").appendChild(tr);
 }
 
-function gagnant1(_equipe) {
-           
+function gagnant1(_equipe) {           
         let resultat = _equipe.score;        
         let resultat1 = resultat[0];
         resultat1 = resultat1.split('-');
@@ -73,10 +82,8 @@ function gagnant1(_equipe) {
     }    
 
 
-function gagnant2(_equipe) {
-    for (const equipe of table) {
-        let resultat = _equipe.score;
-        console.log(resultat)
+function gagnant2(_equipe) {    
+        let resultat = _equipe.score;        
         let resultat2 = resultat[1];
         resultat2 = resultat2.split('-');
         let resultatEquipe1 = +resultat2[0]
@@ -92,13 +99,25 @@ function gagnant2(_equipe) {
         }
         else {
             return "égalité"
-        }
+        } 
     }
-}
+// function a corriger plus tard: il faudrat recuperer les
+// fonctions gagnant1 et gagnant2 et en faire une seule fonction.
+// function gagnant(_equipe) {
+//     if (resultatEquipe1 > resultatEquipe2) {
 
-function deplacerDansTableau() {
-    
-}
+//         return " " + _equipe.team1
+//     }
+//     else if (resultatEquipe2 > resultatEquipe1) {
+
+//         return " " + _equipe.team2
+//     }
+//     else {
+//         return "égalité"
+//     }
+// }
+
+
 
 
 
