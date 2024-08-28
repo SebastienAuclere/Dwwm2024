@@ -64,7 +64,7 @@ function capitalCity(string $pays): void
     }
 }
 
-echo isMajor(14) . PHP_EOL;
+var_dump(isMajor(14));
 echo getRetired(-2) . PHP_EOL;
 echo getRetired(45) . PHP_EOL;
 echo getRetired(68) . PHP_EOL;

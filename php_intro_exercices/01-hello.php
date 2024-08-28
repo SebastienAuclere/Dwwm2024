@@ -27,3 +27,12 @@ function hello(string $name): string
 // par la fonction)
 echo hello("");
 echo hello("seb");
+
+$boleen = false; //declaration du boleen en false
+echo $boleen;    //echo ne retourneras rien
+
+$boleen = true;  //redeclaration du boleen en true
+echo $boleen;    //echo retourne 1
+
+
+
