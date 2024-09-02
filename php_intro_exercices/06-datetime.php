@@ -12,60 +12,43 @@ function getToday2(): string
     return $dateToday->format("Y-m-d");
 }
 
-function getTimeLeft(string $date): string
+function getTimeLeft(string $dateFournie): string
 {
-    if ( $date === date("Y-m-d")){
-        if ( $date < getToday2())
-        {
-            return "Evenement passé";
-        }
-        elseif ( $date === getToday2())
-        {
-            return "Aujourd'hui";
-        } 
-        else 
-        {
-            return "Dans " . ( $date("Y") - ((new DateTime("now"))->format("Y"))) . " ans" 
-            . ( $date("m") - ((new DateTime("now"))->format("m"))) . " mois et "
-             . ( $date("d") - ((new DateTime("now"))->format("d"))) . " jours";
-        }
-    } 
-    else
+    $dateFournie = new DateTime(($dateFournie)); //instancie l'objet dateFournie avec l'argument string de la fonction getTimeLeft;
+    $dateFormatee = $dateFournie->format("y-m-d"); //ne change pas l'objet dateFournie mais le mets avec le format "y-m-d";
+    $dateJour = new DateTime("now"); //instancie l'objet dateJour avec la date de "now" = maintenant (date actuelle du pc);
+    $dateDuJour = $dateJour->format("y-m-d"); // !! pour comparer la date fournie il me faut aussi creer un format en donnant une nouvelle variable de date car les elements comparés doivent avoir le meme type de variable; 
+    $resultatIntervalle = date_diff($dateFournie, $dateJour); // date_diff est une fonction qui calcule l'intervalle entre deux objets date;
+    $intervalleAnnee = $resultatIntervalle->format("%y"); //donne l'année;
+    $intervalleMois = $resultatIntervalle->format("%m"); //donne le mois;
+    $intervalleJours = $resultatIntervalle->format("%d"); //donne le jour;
+
+    if ($dateFormatee > $dateDuJour) // si supérieur;
     {
-        return "date is not valid, enter a new date.";
+        if ($intervalleAnnee === "0") // et que l'intervalle n'as pas un an;
+        {
+            if ($intervalleMois === "0") // et que l'intervalle n'as pas non plus un mois;
+            {
+                return "Dans " . $intervalleJours . " jours."; // donne le nombre de jours;
+            } else {
+                return "Dans " . $intervalleMois . " mois et " . $intervalleJours . " jours."; // sinon les mois et les jours;
+            }
+        } else {
+            return "Dans " . $intervalleAnnee . " an(s) et " . $intervalleMois . " mois."; // si l'intervalle a une annee ou plus et les mois;
+        }
+    } elseif ($dateFormatee === $dateDuJour) // si elle est egale;
+    {
+        return "Aujourd'hui.";
+    } elseif ($dateFormatee < $dateDuJour) {
+        return "Evènement passé."; // si elle est passée;
+    } else {
+        return "Is not valid."; // sinon elle n'est pas valide;
     }
 }
 
-function getTimeLeft2(string $annee, string $mois, string $jour): string
-{
-    $date = new DateTime('now');
-    $ladate = $date->format('Y-m-d');
-    $ladateseconde = strtotime($date->format('Y-m-d'));
-    $customdateseconde = strtotime($annee . '-' . $mois . '-' . $jour);
-    $datediff = $customdateseconde - $ladateseconde;
-    $years = floor($datediff / (365.25 * 60 * 60 * 24));
-    $months = floor(($datediff - $years * 365.25 * 60 * 60 * 24) / (30.437 * 60 * 60 * 24)); /* 30.437 = moyenne des mois */
-    $days = floor(($datediff - $years * 365.25 * 60 * 60 * 24 - $months * 30.437 * 60 * 60 * 24) / (60 * 60 * 24));
-
-    if ($annee . '-' . $mois . '-' . $jour === $ladate) {
-        return "Aujourd'hui";
-    } elseif ($annee . '-' . $mois . '-' . $jour < $ladate) {
-        return "Évènement passé";
-    } elseif ($datediff <= 2419200 && $datediff >= 86400) {
-        return 'Dans ' . $days  . ' jour(s)';
-    } elseif ($datediff <= 31536000 && $datediff > 2419200) {
-        return 'Dans ' . $months . ' mois et ' . $days . ' jour(s)';
-    } elseif ($datediff > 31536000) {
-        return 'Dans ' . $years . ' année(s) et ' . $months . ' mois';
-    }
-}
-
-$booleen = false;
-
-echo getToday() . PHP_EOL;
-echo getToday2() . PHP_EOL;
 echo getTimeLeft("2020-11-23") . PHP_EOL;
-echo getTimeLeft("2024-08-28") . PHP_EOL;
-echo getTimeLeft("2024-08-26") . PHP_EOL;
-echo getTimeLeft("2025-09-29") . PHP_EOL;
-echo $boleen;
+echo getTimeLeft("2024-09-02") . PHP_EOL;
+echo getTimeLeft("2024-09-18") . PHP_EOL;
+echo getTimeLeft("2024-12-25") . PHP_EOL;
+echo getTimeLeft("2025-10-26") . PHP_EOL;
+echo getTimeLeft("2026-10-29") . PHP_EOL;
