@@ -18,7 +18,8 @@ function getTimeLeft(string $dateFournie): string
     $dateFormatee = $dateFournie->format("y-m-d"); //ne change pas l'objet dateFournie mais le mets avec le format "y-m-d";
     $dateJour = new DateTime("now"); //instancie l'objet dateJour avec la date de "now" = maintenant (date actuelle du pc);
     $dateDuJour = $dateJour->format("y-m-d"); // !! pour comparer la date fournie il me faut aussi creer un format en donnant une nouvelle variable de date car les elements comparés doivent avoir le meme type de variable; 
-    $resultatIntervalle = date_diff($dateFournie, $dateJour); // date_diff est une fonction qui calcule l'intervalle entre deux objets date;
+    //$resultatIntervalle = date_diff($dateFournie, $dateJour); // date_diff est une fonction qui calcule l'intervalle entre deux objets date;
+    $resultatIntervalle = $dateFournie->diff($dateJour); // la ligne du dessus est egale a cette ligne, il n'y a juste que la syntaxe qui change. On l'as mis avec Franck car quand la nouvelle version seras mise a jour il faudras l'ecrire de cette manière.
     $intervalleAnnee = $resultatIntervalle->format("%y"); //donne l'année;
     $intervalleMois = $resultatIntervalle->format("%m"); //donne le mois;
     $intervalleJours = $resultatIntervalle->format("%d"); //donne le jour;
