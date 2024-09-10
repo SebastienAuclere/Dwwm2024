@@ -1,50 +1,44 @@
 <?php
 
+require_once "classeVoiture.php";
+
 class Moteur
 {
     // Attributs
 
-    protected $marqueMoteur = null;
-    protected $vitesseMaxMoteur = null;
+    protected string $marqueMoteur;
+    protected int $vitesseMaxMoteur;
+
+    // Constructeur
+
+    public function _construct(string $marqueMoteur, int $vitesseMaxMoteur)
+    {
+        $this->marqueMoteur = $marqueMoteur;
+        $this->vitesseMaxMoteur = $vitesseMaxMoteur;
+    }
     
 
     // Public getters
 
-    public function getMarqueMoteur()
+    public function getMarqueMoteur(): string
     {
         return $this->marqueMoteur;
     }
 
-    public function getVitesseMaxMoteur()
+    public function getVitesseMaxMoteur(): int
     {
         return $this->vitesseMaxMoteur;
     }   
 
     // Public setters
 
-    public function setMarqueMoteur($marqueMoteur)
-    {
-        return $this->marqueMoteur = $marqueMoteur;
-    }
-
-    public function setVitesseMaxMoteur($vitesseMaxMoteur)
-    {
-        return $this->vitesseMaxMoteur = $vitesseMaxMoteur;
-    }
-
-    // Constructeur
-
-    public function _construct($marqueMoteur, $vitesseMaxMoteur)
+    public function setMarqueMoteur($marqueMoteur): void
     {
         $this->marqueMoteur = $marqueMoteur;
-        $this->vitesseMaxMoteur = $vitesseMaxMoteur;
-        
     }
 
-    // Fonction ensembleInformations
-
-    public function ensembleInformations($marqueMoteur, $vitesseMaxMoteur): string
+    public function setVitesseMaxMoteur($vitesseMaxMoteur): void
     {
-        return "Le moteur est de marque " . $marqueMoteur . " et possède une vitesse maximum de: " . $vitesseMaxMoteur . " .";
-    }
+        $this->vitesseMaxMoteur = $vitesseMaxMoteur;
+    }       
 }

@@ -1,10 +1,12 @@
 <?php
 
+require_once "classeVoiture.php";
+
 class VoitureDeCourse
 {
     // Attributs
 
-    protected $marqueMoteur = $marque;
+    protected $marqueMoteur === $marque;
 
     // Fonction vitesseMaxVoitureDeCourse
 
