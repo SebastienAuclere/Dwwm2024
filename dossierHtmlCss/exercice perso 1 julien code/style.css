@@ -1,0 +1,54 @@
+.conteneur{
+    margin: 0;
+    width: 100%;
+    height: 50rem;
+    background-color: black;
+}
+
+.bandeau{
+    width:50%;    
+    color:black;
+    text-align: center;
+    background-color: aqua;
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    margin-left:auto;
+    margin-right: auto;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;    
+}
+
+.menu{
+    background-color:violet ;
+    float:left;
+    width: 4rem;
+    height: 9rem;
+    text-align: center;
+    margin-top: 7rem;
+    margin-left: 12rem;
+    padding-top: 1rem;
+}
+
+.contenu{
+    background-color: yellow;
+    position: relative;
+    float: left;
+    width:41%;
+    margin-left: auto;     
+}
+
+.bloc{
+    background-color: red;
+    position: absolute;
+    margin-left: 59%;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+p{
+    margin:0;
+}
+
+h2{
+    text-align: center;
+}
